@@ -49,7 +49,7 @@
       align-items: flex-start;
       padding: 36px;
       border-radius: 16px;
-      background: rgba(0,0,0,0.35); /* overlay behind text */
+      background: linear-gradient(135deg, var(--green-1), var(--green-2)); /* dark green to light green gradient */
       color: #fff;
     }
 
@@ -77,10 +77,11 @@
       transition: transform .16s, box-shadow .16s;
     }
     .service:hover { transform: translateY(-6px); }
-    .icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(180deg, var(--green-2), var(--green-1)); margin-bottom: 10px; }
+    .icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(180deg, var(--green-2), var(--green-1)); margin-bottom: 10px; transition: transform 0.2s; }
+    .icon:hover { transform: scale(1.15); } /* subtle hover effect */
     .service h3 { margin: 0 0 6px 0; }
     .service p { margin: 0; color: #40534a; font-size: 13px; }
-    
+
     .service .more {
       max-height: 0;
       overflow: hidden;
@@ -202,10 +203,6 @@
           </div>
           <div style="margin-top:8px">Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></div>
         </div>
-
-        <div class="right">
-          <button class="btn" id="quoteTopBtn">Request Quote</button>
-        </div>
       </div>
     </section>
 
@@ -214,7 +211,7 @@
     </footer>
   </div>
 
-  <a class="float-call" href="tel:+15551234567" aria-label="Call Thrasher's Landscaping">
+  <a class="float-call" href="tel:+8643601124" aria-label="Call Thrasher's Landscaping">
     📞 Call Us
   </a>
 
@@ -234,10 +231,6 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.getElementById('quoteTopBtn').addEventListener('click', () => {
-      window.location.href = "mailto:thrasher@example.com?subject=Request%20for%20Quote%20-%20LLC%20Thrasher's%20Landscaping";
-    });
   </script>
 </body>
 </html>
