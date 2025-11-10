@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LLC Thrasher's Landscaping</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green-1:#2e7d32;
+      --green-2:#66bb6a;
+      --accent-blue:#2196f3;
+      --card-bg:rgba(255,255,255,0.95);
+      --glass: rgba(255,255,255,0.08);
+      --max-width:1100px;
+      --radius:14px;
+      --shadow: 0 8px 30px rgba(12,24,20,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Lato",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background: linear-gradient(180deg,#eefaf0 0%, #f6fcff 100%);
+      color:#083227;
+      display:flex;justify-content:center;padding:28px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{
+      width:100%;max-width:var(--max-width);border-radius:16px;overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.99));
+      box-shadow:var(--shadow);
+    }
+
+    /* HERO */
+    .hero{
+      display:flex;gap:24px;align-items:center;padding:36px;
+      background: linear-gradient(135deg,var(--green-1),var(--accent-blue));
+      color:#fff;
+    }
+    .brand{display:flex;gap:12px;align-items:center;font-family:"Poppins"}
+    .logo-badge{width:64px;height:64px;border-radius:12px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center}
+    .hero .left{flex:1}
+    .hero h1{margin:10px 0 8px;font-size:32px}
+    .hero p{margin:0 0 16px;opacity:0.95;max-width:520px}
+    .cta-row{display:flex;gap:10px}
+    .btn{background:#fff;color:var(--green-1);border:0;padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+    .btn-call{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.14)}
+
+    .hero .right{width:320px}
+    .spot{background:rgba(255,255,255,0.08);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.08)}
+
+    /* sections */
+    .section{padding:24px 34px;border-top:1px solid rgba(8,18,14,0.03)}
+    .section h2{font-family:"Poppins";color:var(--green-1);margin:0 0 12px 0}
+
+    /* services */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .service{background:var(--card-bg);padding:14px;border-radius:12px;box-shadow:0 8px 20px rgba(12,20,10,0.06);cursor:pointer;transition:transform .16s,box-shadow .16s}
+    .service:hover{transform:translateY(-6px)}
+    .icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(180deg,var(--green-2),var(--green-1));margin-bottom:10px}
+    .service h3{margin:0 0 6px 0}
+    .service p{margin:0;color:#40534a;font-size:13px}
+    .service .more{display:none;margin-top:10px;font-size:13px}
+    .service.expanded .more{display:block}
+    .service.active{box-shadow: 0 12px 40px rgba(0,0,0,0.9);outline:4px solid rgba(0,0,0,0.06);transform:translateY(-4px) scale(1.01)}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:1px solid rgba(0,0,0,0.08);transition:transform .2s}
+    .gallery img:hover{transform:scale(1.04)}
+    .note{font-size:13px;color:#425c50;margin-top:8px}
+
+    /* contact */
+    .contact{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:12px}
+    .mail{display:inline-flex;align-items:center;gap:8px;padding:10px;border-radius:10px;background:var(--glass)}
+
+    /* floating */
+    .float-call{position:fixed;right:18px;bottom:18px;background:var(--green-1);color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 10px 30px rgba(46,125,50,0.18);z-index:999}
+    .float-call a{color:#fff;text-decoration:none;font-weight:700}
+
+    @media (max-width:820px){
+      .hero{flex-direction:column;align-items:stretch;padding:20px}
+      .hero h1{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="left">
+        <div class="brand">
+          <div class="logo-badge" aria-hidden="true">
+            <!-- mini lawn svg -->
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C14.8 2 17 4.2 17 7c0 4-5 9-5 9s-5-5-5-9c0-2.8 2.2-5 5-5z" fill="#fff"/>
+              <path d="M5 19c1-2 3-3 6-3s5 1 6 3H5z" fill="#ffffffcc"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:18px;font-weight:700">LLC Thrasher's Landscaping</div>
+            <div style="font-size:12px;opacity:0.95">Lawn care • Pressure washing • Mulch • Gardening • Rock accents</div>
+          </div>
+        </div>
+
+        <h1>Make your yard the neighborhood showpiece.</h1>
+        <p>Local, family-run crew delivering honest pricing and hands-on work — from pressure washing driveways to laying crisp mulch lines.</p>
+
+        <div class="cta-row">
+          <button class="btn" id="getQuoteBtn">Get a Free Quote</button>
+          <button class="btn btn-call" onclick="location.href='tel:+15551234567'">Call Now</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="spot">
+          <div style="font-weight:700">Today's Special</div>
+          <div style="font-size:13px;opacity:0.95;margin-top:8px">20% off first-time pressure washing (driveways & decks)</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service" data-service="landscaping" tabindex="0">
+          <div class="icon">🌳</div>
+          <h3>Landscaping</h3>
+          <p>Design & maintenance — mowing, edging, seasonal cleanups.</p>
+          <div class="more">Complete yard makeovers, planting, grading and ongoing maintenance packages available.</div>
+        </div>
+
+        <div class="service" data-service="pressure" tabindex="0">
+          <div class="icon">💦</div>
+          <h3>Pressure Washing</h3>
+          <p>Driveways, decks, sidewalks, siding — we remove grime and restore surfaces.</p>
+          <div class="more">Safe PSI for wood decks, chemical-free options on request.</div>
+        </div>
+
+        <div class="service" data-service="mulch" tabindex="0">
+          <div class="icon">🌾</div>
+          <h3>Mulch Work</h3>
+          <p>Fresh mulch installs, clean bed lines, and weed management.</p>
+          <div class="more">We offer different mulch colors and recycled options.</div>
+        </div>
+
+        <div class="service" data-service="gardening" tabindex="0">
+          <div class="icon">🌼</div>
+          <h3>Gardening</h3>
+          <p>Flower bed planting, weeding, pruning and seasonal planting plans.</p>
+          <div class="more">Custom plant selection for shade & sun; maintenance plans available.</div>
+        </div>
+
+        <div class="service" data-service="rocks" tabindex="0">
+          <div class="icon">🪨</div>
+          <h3>Rock Placement</h3>
+          <p>Decorative stone borders, rock beds, and erosion control.</p>
+          <div class="more">We handle edging, level prep and stone layout for long-lasting installation.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery" id="galleryGrid">
+        <img src="images for website/grass.png" alt="Freshly mowed grass and lawn">
+        <img src="images for website/powerwash.png" alt="Pressure washed driveway">
+        <img src="images for website/mulch.png" alt="Mulch bed with clean edges">
+        <img src="images for website/garden.png" alt="Colorful garden flowers and plants">
+        <img src="images for website/rocks.png" alt="Rock placement and decorative stones">
+      </div>
+      <div class="note">Serving Easley, Pickens, and Greenville · View our latest landscaping and pressure washing work.</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div class="left">
+          <div class="mail">
+            <strong>Email:</strong>&nbsp;<a href="mailto:thrasher@example.com">thrasher@example.com</a>
+          </div>
+          <div style="margin-top:8px">Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></div>
+        </div>
+
+        <div class="right">
+          <button class="btn" id="quoteTopBtn">Request Quote</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section" style="text-align:center;font-size:13px;color:#6b8a78">
+      © <span id="year"></span> LLC Thrasher's Landscaping · Licensed & Insured
+    </footer>
+  </div>
+
+  <a class="float-call" href="tel:+15551234567" aria-label="Call Thrasher's Landscaping">
+    📞 Call Us
+  </a>
+
+  <script>
+    // Service toggle behavior
+    document.querySelectorAll('.service').forEach(s=>{
+      s.addEventListener('click', ()=>{
+        document.querySelectorAll('.service').forEach(x=>{
+          if(x!==s) x.classList.remove('active','expanded');
+        });
+        s.classList.toggle('expanded');
+        s.classList.toggle('active');
+      });
+      s.addEventListener('keydown', (e)=>{
+        if(e.key==='Enter' || e.key===' ') { e.preventDefault(); s.click(); }
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Email quote button behavior
+    function mailToQuote(){
+      window.location.href = "mailto:thrasher@example.com?subject=Request%20for%20Quote%20-%20LLC%20Thrasher's%20Landscaping";
+    }
+    document.getElementById('getQuoteBtn').addEventListener('click', mailToQuote);
+    document.getElementById('quoteTopBtn').addEventListener('click', mailToQuote);
+  </script>
+</body>
+</html>
