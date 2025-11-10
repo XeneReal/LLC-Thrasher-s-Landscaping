@@ -24,7 +24,7 @@
     body {
       margin: 0;
       font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background: url('images/mountain.jpg') no-repeat center center fixed;
+      background: url('images/mountains.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #083227;
       display: flex;
@@ -38,12 +38,21 @@
       max-width: var(--max-width);
       border-radius: 16px;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.99));
+      background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(255,255,255,1));
       box-shadow: var(--shadow);
     }
 
     /* HERO */
-    .hero { display: flex; gap: 24px; align-items: center; padding: 36px; background: linear-gradient(135deg,var(--green-1),var(--accent-blue)); color: #fff; }
+    .hero {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      padding: 36px;
+      background: linear-gradient(135deg,var(--green-1),var(--accent-blue));
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
     .brand { display: flex; gap: 12px; align-items: center; font-family: "Poppins"; }
     .logo-badge { width: 64px; height: 64px; border-radius: 12px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; }
     .hero .left { flex: 1; }
@@ -54,7 +63,13 @@
     .btn-call { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.14); }
 
     .hero .right { width: 320px; }
-    .spot { background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .spot {
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.99));
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
     /* sections */
     .section { padding: 24px 34px; border-top: 1px solid rgba(8,18,14,0.03); }
@@ -62,14 +77,21 @@
 
     /* services */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; }
-    .service { background: var(--card-bg); padding: 14px; border-radius: 12px; box-shadow: 0 8px 20px rgba(12,20,10,0.06); cursor: pointer; transition: transform .16s, box-shadow .16s; }
+    .service {
+      background: var(--card-bg);
+      padding: 14px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(12,20,10,0.2);
+      cursor: pointer;
+      transition: transform .16s, box-shadow .16s;
+    }
     .service:hover { transform: translateY(-6px); }
     .icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(180deg, var(--green-2), var(--green-1)); margin-bottom: 10px; }
     .service h3 { margin: 0 0 6px 0; }
     .service p { margin: 0; color: #40534a; font-size: 13px; }
     .service .more { display: none; margin-top: 10px; font-size: 13px; }
     .service.expanded .more { display: block; }
-    .service.active { box-shadow: 0 12px 40px rgba(0,0,0,0.9); outline: 4px solid rgba(0,0,0,0.06); transform: translateY(-4px) scale(1.01); }
+    .service.active { box-shadow: 0 12px 40px rgba(0,0,0,0.4); outline: 4px solid rgba(0,0,0,0.06); transform: translateY(-4px) scale(1.01); }
 
     /* gallery */
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; margin-top: 12px; }
@@ -100,7 +122,6 @@
       <div class="left">
         <div class="brand">
           <div class="logo-badge" aria-hidden="true">
-            <!-- mini lawn svg -->
             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C14.8 2 17 4.2 17 7c0 4-5 9-5 9s-5-5-5-9c0-2.8 2.2-5 5-5z" fill="#fff"/>
               <path d="M5 19c1-2 3-3 6-3s5 1 6 3H5z" fill="#ffffffcc"/>
@@ -169,7 +190,6 @@
   </a>
 
   <script>
-    // Service toggle behavior
     document.querySelectorAll('.service').forEach(s=>{
       s.addEventListener('click', ()=>{
         document.querySelectorAll('.service').forEach(x=>{
@@ -185,7 +205,6 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Email quote button behavior
     function mailToQuote(){
       window.location.href = "mailto:thrasher@example.com?subject=Request%20for%20Quote%20-%20LLC%20Thrasher's%20Landscaping";
     }
