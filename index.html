@@ -48,11 +48,10 @@
       gap: 24px;
       align-items: center;
       padding: 36px;
-      background: linear-gradient(135deg,var(--green-1),var(--accent-blue));
       color: #fff;
       border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
+
     .brand { display: flex; gap: 12px; align-items: center; font-family: "Poppins"; }
     .logo-badge { width: 64px; height: 64px; border-radius: 12px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; }
     .hero .left { flex: 1; }
@@ -62,20 +61,11 @@
     .btn { background: #fff; color: var(--green-1); border: 0; padding: 10px 14px; border-radius: 999px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
     .btn-call { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.14); }
 
-    .hero .right { width: 320px; }
-    .spot {
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.99));
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
     /* sections */
     .section { padding: 24px 34px; border-top: 1px solid rgba(8,18,14,0.03); }
     .section h2 { font-family: "Poppins"; color: var(--green-1); margin: 0 0 12px 0; }
 
-    /* services */
+    /* WHAT WE DO */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; }
     .service {
       background: var(--card-bg);
@@ -141,14 +131,48 @@
           <button class="btn btn-call" onclick="location.href='tel:+15551234567'">Call Now</button>
         </div>
       </div>
+    </header>
 
-      <div class="right">
-        <div class="spot">
-          <div style="font-weight:700">Today's Special</div>
-          <div style="font-size:13px;opacity:0.95;margin-top:8px">20% off first-time pressure washing (driveways & decks)</div>
+    <!-- WHAT WE DO -->
+    <section class="section" id="what-we-do">
+      <h2>What We Do</h2>
+      <div class="services-grid">
+        <div class="service" data-service="grass" tabindex="0">
+          <div class="icon">🌱</div>
+          <h3>Grass Cutting</h3>
+          <p>Mowing, edging, and keeping your lawn neat and healthy.</p>
+          <div class="more">Regular maintenance packages available for all lawn sizes.</div>
+        </div>
+
+        <div class="service" data-service="powerwashing" tabindex="0">
+          <div class="icon">💦</div>
+          <h3>Power Washing</h3>
+          <p>Driveways, decks, sidewalks, and siding cleaned professionally.</p>
+          <div class="more">Safe PSI for delicate surfaces, chemical-free options on request.</div>
+        </div>
+
+        <div class="service" data-service="gardening" tabindex="0">
+          <div class="icon">🌼</div>
+          <h3>Gardening</h3>
+          <p>Flower beds, pruning, weeding, and seasonal planting plans.</p>
+          <div class="more">Custom plant selection for shade & sun with maintenance plans available.</div>
+        </div>
+
+        <div class="service" data-service="rockplacement" tabindex="0">
+          <div class="icon">🪨</div>
+          <h3>Rock Placement</h3>
+          <p>Decorative stone borders, rock beds, and erosion control.</p>
+          <div class="more">We handle layout, leveling, and long-lasting installation.</div>
+        </div>
+
+        <div class="service" data-service="mulch" tabindex="0">
+          <div class="icon">🌾</div>
+          <h3>Mulch</h3>
+          <p>Fresh mulch installs, clean bed lines, and weed management.</p>
+          <div class="more">Different mulch colors and recycled options available.</div>
         </div>
       </div>
-    </header>
+    </section>
 
     <!-- GALLERY -->
     <section class="section" id="gallery">
